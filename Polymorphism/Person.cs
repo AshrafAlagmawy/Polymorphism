@@ -4,12 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*
- * The Goal Of Polymorphism
-
-1.
-*/
-
 namespace Polymorphism
 {
     internal abstract class Person

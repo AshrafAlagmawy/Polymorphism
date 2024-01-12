@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Polymorphism Has Two Types 
+    * Runtime Polymorphism / Overriding / Dynamic Polymorphism
+    * Compiletime Polymorphism / Overloading / Static Polymorphism
+
+ * Overriding vs Overloading
+ 
+    * Overriding => Two methods with the same name and the same signature
+    * Overloading => Two methods with the same name but different signature
+        * Different Signature such as return datatype or number of parameters or types of parameters
+
+*/
+
 namespace Polymorphism
 {
-    internal class Employee : Person
+    internal abstract class Employee : Person
     {
         // Inherit All Attributes And Methods From Person Class
-        public decimal BasicSalary { get; private set; }
-        public int TaxPercentage { get; private set; }
-        public void SetBasicSalary(decimal basicSalary)
-        {
-            if (basicSalary < 0)
-                throw new ArgumentException("Invalid Salary Value");
-            BasicSalary = basicSalary;
-        }
-        public void SetTaxPercentage(int taxPercentage)
-        {
-            if (taxPercentage < 10)
-                throw new ArgumentException("Invalid Tax Percentage Value");
-            TaxPercentage = taxPercentage;
-        }
+        public abstract decimal GetSalary();
     }
 }
+ 

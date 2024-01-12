@@ -1,39 +1,28 @@
 ﻿using Polymorphism;
 using System;
 
-// Employee
-var employee = new Employee();
-employee.SetName("Ashraf", "Alagmawy");
-employee.SetBirthDate(new DateOnly(2001, 12, 21));
-employee.SetBasicSalary(5000);
-employee.SetTaxPercentage(15);
+var salariedEmployee = new SalariedEmployee();
+salariedEmployee.BasicSalary = 2000;
+salariedEmployee.Housing = 1000;
+salariedEmployee.Transportation = 500;
+Console.WriteLine($"Salary Of Salaried Employee (Without Taxes) Is {salariedEmployee.GetSalary():0.00}");
+Console.WriteLine($"Salary Of Salaried Employee (With 10% Taxes) Is {salariedEmployee.GetSalary(10):0.00}");
+Console.WriteLine($"Salary Of Salaried Employee (With 10% Taxes And 1200 Bonus) Is {salariedEmployee.GetSalary(10, 1200):0.00}");
 
-Console.WriteLine("Employee Data:");
-Console.WriteLine("---------------");
+Console.WriteLine("-----------------------------------------------------------");
 
-PrintPersonDetails(employee);
-Console.WriteLine($"Basic Salary:\t{employee.BasicSalary}");
-Console.WriteLine($"Tax Percentage:\t{employee.TaxPercentage}");
+var hourlyEmployee = new HourlyEmployee();
+hourlyEmployee.HourRate = 100;
+hourlyEmployee.TotalWorkingHours = 60;
+Console.WriteLine($"Salary Of Hourly Employee Is {hourlyEmployee.GetSalary():0.00}");
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("-----------------------------------------------------------");
 
-// Applicant
-var applicant = new Applicant();
-applicant.SetName("Emad", "Alagmawy");
-applicant.SetBirthDate(new DateOnly(2005, 3, 8));
+var internEmployee = new InternEmployee();
+Console.WriteLine($"Salary Of Intern Employee Is {internEmployee.GetSalary():0.00}");
 
-Console.WriteLine("Applicant Data:");
-Console.WriteLine("---------------");
+Console.WriteLine("-----------------------------------------------------------");
 
-PrintPersonDetails(applicant);
-
-//Person person = employee;
-//person = applicant;
+Console.ForegroundColor = ConsoleColor.White;
 
 Console.ReadKey();
-
-void PrintPersonDetails(Person person)
-{
-    Console.WriteLine($"Full Name:\t{person.FirstName} {person.LastName}");
-    Console.WriteLine($"Birth Date:\t{person.BirthDate}");
-}
