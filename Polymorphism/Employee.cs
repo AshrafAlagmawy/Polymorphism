@@ -19,9 +19,8 @@ using System.Threading.Tasks;
 
 namespace Polymorphism
 {
-    internal abstract class Employee : Person
+    internal abstract class Employee
     {
-        // Inherit All Attributes And Methods From Person Class
         public abstract decimal GetSalary();
     }
 }
